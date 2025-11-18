@@ -2,7 +2,7 @@
   "name": "iota-calculator",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://dshuman12.github.io/dshuman.github.io",
+  "homepage": "https://dshuman12.github.io",
   "dependencies": {
     "chart.js": "^4.4.0",
     "chartjs-plugin-annotation": "^3.1.0",
