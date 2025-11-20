@@ -1,248 +1,248 @@
-,CTR_CD,Exists 2025,Baseline Y1 - Transplants,Baseline Y2 - Transplants,Baseline Y3 - Transplants,Performance Y1 - Transplants,Performance Y1 - Organ Offer Acceptance Rate,Performance Y1 - Graft Survival Rate,Name,IOTA
-0,nan,0,,,,,,,00 - Not sure,
-1,nan,0,,,,,,,BSW Uterus,
-2,ALUA,1,314.0,282.0,254.0,243.0,0.84,94.04856907,University of Alabama Hospital,1
-3,ALVA,1,8.0,3.0,6.0,2.0,0.24,100.0,Birmingham VA Medical Center,0
-4,ARCH,1,9.0,5.0,4.0,8.0,0.7,,Arkansas Children's Hospital,0
-5,ARUA,1,184.0,155.0,172.0,144.0,0.95,95.83399043,UAMS Medical Center,1
-6,AZCH,1,22.0,10.0,9.0,14.0,0.95,,Phoenix Children's Hospital,0
-7,AZGS,1,66.0,90.0,115.0,91.0,1.16,97.70580297,Banner-University Medical Center Phoenix,0
-8,AZMC,1,454.0,470.0,502.0,501.0,1.96,94.23027489,Mayo Clinic Hospital Arizona,0
-9,AZSJ,1,57.0,68.0,53.0,60.0,0.93,96.81528662,St. Joseph's Hospital and Medical Center,0
-10,AZUA,1,86.0,94.0,97.0,64.0,1.16,96.30053205,Banner University Medical Center-Tucson,0
-11,CACH,1,9.0,11.0,9.0,12.0,0.6,100.0,Rady Children's Hospital and Health Center,0
-12,CACL,1,22.0,22.0,17.0,19.0,0.79,,Childrens Hospital Los Angeles,0
-13,CACS,1,268.0,285.0,335.0,316.0,1.37,95.56860819,Cedars-Sinai Medical Center,1
-14,CAGH,1,62.0,51.0,61.0,49.0,0.69,97.88732394,Scripps Green Hospital,1
-15,CAIM,1,126.0,127.0,133.0,221.0,1.75,94.2005305,University of California Irvine Medical Center,1
-16,CALA,1,27.0,36.0,39.0,48.0,0.34,95.59240363,Harbor UCLA Medical Center,1
-17,CALL,1,203.0,257.0,264.0,221.0,0.92,93.51965602,Loma Linda University Medical Center,1
-18,CAMB,1,12.0,15.0,16.0,20.0,2.16,100.0,UCSF Medical Center at Mission Bay,0
-19,CAPC,1,26.0,30.0,28.0,42.0,1.39,,Lucile Salter Packard Children's Hospital at Stanford,0
-20,CAPM,1,208.0,214.0,195.0,190.0,2.2,95.23104643,California Pacific Medical Center-Van Ness Campus,0
-21,CARC,1,8.0,27.0,6.0,0.0,,83.33333333,Riverside Community Hospital,0
-22,CASD,1,150.0,146.0,178.0,163.0,0.94,96.83881478,University of California San Diego Medical Center,1
-23,CASF,1,386.0,388.0,430.0,361.0,1.53,95.40130152,University of California San Francisco Medical Center,0
-24,CASG,0,,,,,,,Sutter Medical Center Sacramento,0
-25,CASH,1,84.0,105.0,83.0,101.0,0.68,94.14638601,Sharp Memorial Hospital,1
-26,CASJ,1,41.0,61.0,95.0,108.0,1.09,97.91770729,Saint Joseph Hospital,1
-27,CASM,1,282.0,245.0,310.0,310.0,1.36,96.59244464,University of California Davis Medical Center,0
-28,CASU,1,154.0,164.0,189.0,166.0,1.39,98.30097087,Stanford Health Care,0
-29,CAUC,1,418.0,385.0,355.0,383.0,1.18,95.36339523,University of California at Los Angeles Medical Center,1
-30,CAUH,1,206.0,210.0,211.0,176.0,0.81,94.57663627,Keck Hospital of USC,1
-31,COCH,1,21.0,15.0,21.0,19.0,1.26,,Children's Hospital Colorado,0
-32,COPM,1,43.0,91.0,90.0,114.0,0.52,96.01639426,Centura Transplant / AdventHealth Porter,0
-33,COSL,1,55.0,62.0,54.0,64.0,0.62,96.41034985,Presbyterian/St Luke's Medical Center,1
-34,COUC,1,244.0,301.0,289.0,253.0,1.44,95.17476028,University of Colorado Hospital/Health Science Center,1
-35,CTHH,1,116.0,128.0,143.0,115.0,2.13,93.53129271,Hartford Hospital,0
-36,CTYN,1,121.0,131.0,126.0,106.0,0.99,96.48831381,Yale New Haven Hospital,0
-37,DCCH,1,13.0,20.0,14.0,13.0,0.84,,Children's National Medical Center,0
-38,DCGU,1,242.0,220.0,260.0,354.0,1.24,94.8172127,Medstar Georgetown Transplant Institute,1
-39,DCGW,1,65.0,45.0,60.0,52.0,0.5,95.85714286,George Washington University Hospital,1
-40,DCWR,1,45.0,53.0,41.0,36.0,0.83,97.32142857,Walter Reed National Military Medical Center at Bethesda,1
-41,DEAI,1,9.0,3.0,8.0,8.0,1.06,,Nemours Children's Hospital Delaware,0
-42,DECC,1,23.0,29.0,42.0,45.0,0.59,95.15242379,Christiana Care Health Services,1
-43,FLAC,0,,,,,,,Johns Hopkins All Children's Hospital,0
-44,FLBC,1,19.0,12.0,0.0,0.0,,83.33333333,Broward Health Medical Center (FLBC),0
-45,FLCC,1,156.0,142.0,151.0,132.0,0.83,95.91883043,Cleveland Clinic Florida Weston,0
-46,FLFH,1,117.0,107.0,126.0,105.0,0.69,96.37564433,AdventHealth Orlando,1
-47,FLHM,1,20.0,13.0,12.0,3.0,0.21,88.88888889,Halifax Health,1
-48,FLJD,0,,,,,,,Memorial Regional Hospital/Joe DiMaggio Children's Hospital,0
-49,FLJM,1,367.0,429.0,337.0,276.0,1.79,92.78098479,Jackson Memorial Hospital University of Miami School of Medicine,0
-50,FLLM,1,45.0,77.0,74.0,88.0,0.82,93.57766544,Largo Medical Center,0
-51,FLMR,1,37.0,124.0,146.0,202.0,2.55,95.90316185,Memorial Regional Hospital,0
-52,FLSH,1,13.0,39.0,25.0,16.0,0.29,95.83333333,Ascension Sacred Heart Pensacola,0
-53,FLSL,1,226.0,224.0,206.0,219.0,0.75,93.36274819,Mayo Clinic Hospital Florida,0
-54,FLTG,1,328.0,404.0,459.0,500.0,2.13,94.34460968,Tampa General Hospital,0
-55,FLUF,1,184.0,221.0,230.0,138.0,1.22,97.42077278,UF Health Shands Hospital,0
-56,GAEH,1,24.0,15.0,24.0,21.0,1.02,100.0,Children's Healthcare of Atlanta at Egleston,0
-57,GAEM,1,370.0,370.0,353.0,410.0,0.97,94.79383548,Emory University Hospital,1
-58,GAMC,1,59.0,88.0,90.0,100.0,1.14,90.96335599,"AU Medical Center, Inc.",1
-59,GAPH,1,379.0,332.0,341.0,361.0,1.13,96.66977155,Piedmont Hospital,1
-60,HIQM,1,46.0,63.0,43.0,70.0,1.57,100.0,The Queen's Medical Center,0
-61,IAIM,1,86.0,78.0,71.0,90.0,1.29,92.41660489,Iowa Methodist Medical Center,1
-62,IAIV,1,111.0,95.0,111.0,78.0,0.5,94.28661616,University of Iowa Hospitals and Clinics Transplant Programs,1
-63,IAVA,1,17.0,7.0,9.0,11.0,0.22,93.75,The Iowa City VA Health Care System,0
-64,ILCH,1,35.0,28.0,17.0,44.0,0.26,95.65217391,Advocate Christ Medical Center,0
-65,ILCM,1,33.0,26.0,26.0,44.0,1.49,100.0,Ann & Robert H. Lurie Children's Hospital of Chicago,0
-66,ILLU,1,198.0,209.0,247.0,263.0,1.17,96.43496543,Loyola University Medical Center,0
-67,ILMM,1,24.0,26.0,32.0,25.0,0.73,98.27586207,Springfield Memorial Hospital,0
-68,ILNM,1,277.0,308.0,341.0,338.0,1.47,96.92800684,Northwestern Memorial Hospital,0
-69,ILPL,1,101.0,134.0,147.0,130.0,0.79,97.43057074,Rush University Medical Center,0
-70,ILSF,1,54.0,59.0,48.0,44.0,0.4,96.54545455,OSF Saint Francis Medical Center,0
-71,ILUC,1,164.0,140.0,166.0,225.0,0.95,95.43816472,University of Chicago Medical Center,0
-72,ILUI,1,274.0,264.0,264.0,266.0,1.17,94.23177005,University of Illinois Medical Center,0
-73,ILVA,1,36.0,64.0,110.0,68.0,0.6,94.41612604,Edward Hines Jr. Veterans Administration Medical Center,0
-74,INIM,1,279.0,223.0,205.0,240.0,0.71,92.60804234,Indiana University Health,1
-75,INLH,0,0.0,0.0,,,,,Lutheran Hospital of Fort Wayne,0
-76,INSV,1,72.0,80.0,75.0,87.0,0.44,98.41269841,Ascension St. Vincent Hospital,1
-77,KSUK,1,185.0,177.0,153.0,206.0,2.01,93.20777872,University of Kansas Hospital,0
-78,KYJH,1,62.0,62.0,76.0,77.0,0.69,98.50746269,Jewish Hospital (UofL - Trager Transplant),0
-79,KYKC,1,4.0,1.0,2.0,3.0,0.29,,Norton Children's Hospital,0
-80,KYUK,1,97.0,114.0,127.0,116.0,0.53,97.96332046,University of Kentucky Medical Center,0
-81,LACH,1,17.0,13.0,15.0,11.0,0.72,,Children's Hospital,0
-82,LAOF,1,184.0,204.0,185.0,195.0,0.88,96.44934666,Ochsner Foundation Hospital,1
-83,LATU,1,121.0,123.0,135.0,121.0,0.81,94.23163587,Tulane Medical Center,1
-84,LAWK,1,48.0,43.0,54.0,73.0,0.34,94.51472897,Willis-Knighton Medical Center,0
-85,MABI,1,50.0,96.0,80.0,71.0,1.04,93.59739555,Beth Israel Deaconess Medical Center,0
-86,MABS,1,51.0,49.0,72.0,80.0,3.09,85.77494692,Baystate Medical Center,0
-87,MABU,1,35.0,23.0,19.0,66.0,0.85,91.09730849,Boston Medical Center,0
-88,MACH,1,27.0,14.0,27.0,26.0,1.33,,Boston Children's Hospital,0
-89,MALC,1,40.0,66.0,57.0,66.0,0.91,95.65793262,Lahey Clinic Medical Center,0
-90,MAMG,1,162.0,145.0,176.0,223.0,0.83,95.33857592,Massachusetts General Hospital,0
-91,MANM,1,37.0,69.0,52.0,51.0,0.69,94.85294118,Tufts Medical Center,0
-92,MAPB,1,63.0,76.0,61.0,51.0,0.48,93.62907032,Brigham and Women's Hospital,0
-93,MAUM,1,57.0,67.0,59.0,72.0,0.96,94.47365708,UMass Memorial Medical Center,0
-94,MDJH,1,249.0,242.0,239.0,201.0,0.68,95.71465534,Johns Hopkins Hospital,1
-95,MDUM,1,168.0,162.0,145.0,152.0,0.49,93.39906103,University of Maryland Medical System,1
-96,MEMC,1,51.0,45.0,41.0,31.0,0.88,93.56962025,Maine Medical Center,0
-97,MIBH,1,75.0,81.0,91.0,80.0,0.52,96.34296365,Corewell Health William Beaumont Hospital,1
-98,MICH,1,4.0,8.0,8.0,8.0,0.43,,Children's Hospital of Michigan,0
-99,MIDV,1,6.0,6.0,9.0,3.0,1.88,,Helen DeVos Children's Hospital,0
-100,MIHF,1,79.0,111.0,130.0,136.0,1.3,94.65357599,Henry Ford Hospital,1
-101,MISJ,1,26.0,35.0,28.0,30.0,0.63,94.10722198,Henry Ford St. John Hospital,1
-102,MISM,1,90.0,102.0,96.0,109.0,0.91,94.65779143,Mercy Health Saint Mary's,1
-103,MIUM,1,220.0,233.0,317.0,262.0,1.12,91.0000136,University of Michigan Medical Center,1
-104,MNAN,1,19.0,37.0,40.0,32.0,0.78,95.01262626,Abbott Northwestern Hospital,1
-105,MNCM,0,,,,,,,Children's Minnesota,0
-106,MNHC,1,52.0,58.0,61.0,49.0,0.71,97.18309859,Hennepin County Medical Center,1
-107,MNMC,1,267.0,300.0,287.0,270.0,0.83,97.25729015,Mayo Clinic Hospital Minnesota,1
-108,MNUM,1,193.0,199.0,212.0,206.0,1.17,94.70934449,"University of Minnesota Medical Center, Fairview",1
-109,MOBH,1,274.0,315.0,322.0,334.0,1.14,95.27221931,Barnes-Jewish Hospital,1
-110,MOCG,1,10.0,3.0,8.0,5.0,0.74,,Cardinal Glennon Children's Hospital,0
-111,MOCH,1,12.0,9.0,11.0,11.0,0.66,,St. Louis Children's Hospital at Washington University Medical Center,0
-112,MOCM,1,12.0,14.0,16.0,14.0,1.23,100.0,Children's Mercy Hospital,0
-113,MOLH,1,125.0,107.0,74.0,77.0,0.78,94.6412201,St Luke's Hospital of Kansas City,0
-114,MORH,1,55.0,58.0,66.0,96.0,0.88,95.0320364,Research Medical Center,0
-115,MOSL,1,49.0,49.0,50.0,67.0,0.33,97.63779528,SSM Health Saint Louis University Hospital,1
-116,MOUM,1,8.0,15.0,12.0,12.0,0.24,89.67391304,University of Missouri Hospital and Clinics,0
-117,MSUM,1,139.0,132.0,151.0,135.0,1.33,94.11819887,University of Mississippi Medical Center,1
-118,NCBG,1,203.0,245.0,219.0,166.0,0.97,94.47737701,Wake Forest Baptist Medical Center,0
-119,NCCM,1,83.0,97.0,172.0,142.0,0.52,93.4919585,Carolinas Medical Center,0
-120,NCDU,1,233.0,189.0,204.0,210.0,1.1,95.78028529,Duke University Hospital,0
-121,NCEC,1,77.0,107.0,129.0,149.0,1.41,95.64368734,Vidant Medical Center,0
-122,NCMH,1,150.0,151.0,153.0,163.0,0.58,96.25012544,University of North Carolina Hospitals,0
-123,NDMC,1,17.0,16.0,17.0,17.0,0.96,96.96969697,Sanford Bismarck Medical Center,1
-124,NDSL,1,28.0,31.0,45.0,39.0,1.45,95.50028752,Sanford Medical Center Fargo,1
-125,NEUN,1,155.0,144.0,169.0,186.0,1.56,96.04860823,The Nebraska Medical Center,0
-126,NHDH,1,25.0,23.0,27.0,19.0,0.91,100.0,Dartmouth Hitchcock Medical Center,0
-127,NJBI,1,0.0,1.0,1.0,0.0,,,Newark Beth Israel Medical Center,0
-128,NJHK,1,116.0,242.0,323.0,339.0,3.04,93.26428246,Hackensack University Medical Center,0
-129,NJLL,1,46.0,60.0,75.0,95.0,1.42,92.75920361,Virtua Our Lady of Lourdes Hospital,0
-130,NJRW,1,68.0,59.0,75.0,69.0,0.58,90.40909091,Robert Wood Johnson University Hospital,0
-131,NJSB,1,344.0,345.0,390.0,379.0,2.37,93.821046,Saint Barnabas Medical Center,0
-132,NMAQ,1,54.0,51.0,56.0,49.0,0.97,95.2,"University Hospital, University of New Mexico Health Sciences Centera",0
-133,NMPH,1,41.0,40.0,52.0,36.0,0.77,94.60227273,Presbyterian Hospital,0
-134,NV,0,,,,,,,"Renown Transplant Institute 
- ",0
-135,NVUM,1,138.0,141.0,172.0,182.0,1.24,95.34986064,University Medical Center of Southern Nevada,1
-136,NYAM,1,29.0,35.0,34.0,34.0,0.36,98.7804878,Albany Medical Center Hospital,0
-137,NYCC,1,8.0,7.0,7.0,10.0,2.0,,Long Island Jewish Medical Center-Cohen Children's Medical Center,0
-138,NYCP,1,204.0,188.0,227.0,219.0,1.7,94.52633512,NY Presbyterian Hospital/Columbia Univ. Medical Center,1
-139,NYDS,1,43.0,61.0,60.0,44.0,1.69,88.95470813,"State University of New York, Downstate Medical Center",1
-140,NYEC,1,138.0,140.0,140.0,136.0,2.3,88.71329802,Erie County Medical Center,1
-141,NYFL,1,104.0,104.0,103.0,92.0,0.88,94.63558171,"Strong Memorial Hospital, University of Rochester Medical Center",1
-142,NYMA,1,171.0,198.0,246.0,221.0,3.3,92.99394792,Montefiore Medical Center,1
-143,NYMS,1,296.0,274.0,271.0,253.0,0.65,95.47333609,Mount Sinai Medical Center,1
-144,NYNS,1,119.0,134.0,195.0,207.0,1.27,96.08837731,North Shore University Hospital/Northwell Health,1
-145,NYNY,1,263.0,236.0,279.0,315.0,1.65,93.41051433,New York-Presbyterian Hospital/Weill Cornell Medical Center,0
-146,NYSB,1,89.0,73.0,64.0,61.0,0.83,94.08732999,University Hospital of State University of New York at Stony Brook,1
-147,NYUC,1,311.0,333.0,321.0,337.0,1.47,96.99623576,NYU Langone Health,1
-148,NYUM,1,82.0,91.0,93.0,77.0,0.88,94.63553734,State University of New York Upstate Medical University,1
-149,NYVA,1,20.0,11.0,15.0,11.0,0.2,93.5483871,James J. Peters VA Medical Center,1
-150,NYWC,1,69.0,86.0,66.0,93.0,0.73,95.0310559,Westchester Medical Center,1
-151,OHCC,1,298.0,318.0,326.0,354.0,1.28,96.06990254,The Cleveland Clinic Foundation,1
-152,OHCH,1,4.0,12.0,11.0,15.0,0.38,100.0,Nationwide Children's Hospital,0
-153,OHCM,1,34.0,24.0,23.0,29.0,1.26,100.0,Children's Hospital Medical Center,0
-154,OHCO,1,174.0,200.0,203.0,191.0,4.07,94.1165924,University of Toledo Medical Center,0
-155,OHOU,1,328.0,262.0,292.0,296.0,1.06,94.94823091,Ohio State University Medical Center,1
-156,OHTC,1,60.0,63.0,73.0,62.0,0.57,96.47058824,The Christ Hospital,0
-157,OHUC,1,175.0,230.0,209.0,198.0,1.32,96.62803715,University of Cincinnati Medical Center,0
-158,OHUH,1,134.0,94.0,191.0,147.0,2.03,93.43653549,University Hospitals of Cleveland,1
-159,OKBC,1,78.0,86.0,104.0,114.0,0.89,96.00940623,Integris Baptist Medical Center,0
-160,OKMD,1,36.0,42.0,43.0,42.0,0.72,93.14685315,OU Medical Center,0
-161,OKSJ,1,52.0,55.0,50.0,44.0,0.38,93.2394802,Ascension St John Medical Center,0
-162,ORGS,1,89.0,93.0,116.0,77.0,1.16,96.61925949,Legacy Good Samaritan Hospital and Medical Center,1
-163,ORSV,0,,,,,,,"Providence St. Vincent Medical Center (No Living Donation)
-",0
-164,ORUO,1,152.0,138.0,178.0,129.0,1.21,96.7253377,Oregon Health and Science University,1
-165,ORVA,1,38.0,57.0,80.0,54.0,0.73,95.30791789,VA Portland Health Care System,1
-166,PAAE,1,45.0,90.0,75.0,75.0,0.92,97.24867353,Albert Einstein Medical Center,1
-167,PAAG,1,101.0,98.0,88.0,105.0,1.07,92.42142857,Allegheny General Hospital,1
-168,PACC,1,12.0,12.0,1.0,0.0,,76.92307692,Crozer-Chester Medical Center (PACC),0
-169,PACH,1,19.0,21.0,14.0,16.0,0.94,100.0,UPMC Children's Hospital of Pittsburgh,0
-170,PACP,1,18.0,15.0,24.0,24.0,0.57,,Children's Hospital of Philadelphia,0
-171,PAGM,1,42.0,66.0,53.0,61.0,0.26,94.95637106,Geisinger Medical Center,1
-172,PAHE,1,25.0,24.0,1.0,5.0,0.59,95.23809524,Penn State Milton S Hershey Medical Center,0
-173,PAHH,1,41.0,66.0,61.0,83.0,0.43,96.49122807,Pinnacle Health System at Harrisburg Hospital,1
-174,PALH,1,13.0,8.0,6.0,0.0,,92.85714286,The Lankenau Hospital,0
-175,PALV,1,92.0,78.0,113.0,150.0,1.19,92.94849567,Lehigh Valley Hospital,1
-176,PAPH,1,18.0,8.0,16.0,13.0,0.16,96.77419355,UPMC Hamot,0
-177,PAPT,1,183.0,198.0,190.0,162.0,0.79,93.14713065,University of Pittsburgh Medical Center,1
-178,PASC,1,6.0,5.0,1.0,0.0,0.39,,St. Christopher's Hospital for Children,0
-179,PATJ,1,94.0,93.0,92.0,107.0,0.35,96.26060332,Thomas Jefferson University Hospital,1
-180,PATU,1,40.0,43.0,66.0,75.0,0.21,93.09596179,Temple University Hospital,1
-181,PAUP,1,207.0,224.0,241.0,273.0,0.71,96.01627003,Hospital of the University of Pennsylvania,1
-182,PAVA,1,27.0,29.0,45.0,43.0,0.15,97.6744186,VA Pittsburgh Healthcare System,1
-183,PRSJ,1,66.0,53.0,70.0,92.0,1.93,97.46835443,Auxilio Mutuo Hospital,0
-184,RIRH,1,51.0,57.0,56.0,47.0,1.61,96.10824383,Rhode Island Hospital,0
-185,SCLA,1,,24.0,90.0,104.0,2.33,96.66005291,MUSC Lancaster,0
-186,SCMU,1,407.0,387.0,297.0,338.0,1.32,94.90477762,Medical University of South Carolina,1
-187,SCPG,1,,28.0,111.0,133.0,0.9,97.58454106,Prisma Health Greenville Memorial Hospital,0
-188,SDMK,1,35.0,34.0,32.0,42.0,0.37,96.36689475,Avera McKennan Hospital,1
-189,SDSV,1,22.0,21.0,17.0,27.0,0.7,96.22641509,Sanford Health/USD Medical Center,1
-190,TNEM,1,33.0,41.0,44.0,33.0,0.38,92.01024924,Erlanger Medical Center,1
-191,TNLB,1,3.0,7.0,8.0,7.0,0.79,,Le Bonheur Children's Medical Center,0
-192,TNMH,1,196.0,212.0,241.0,262.0,1.3,94.81215267,Methodist University Hospital,0
-193,TNST,1,93.0,100.0,162.0,192.0,2.15,89.96414057,Saint Thomas Hospital,1
-194,TNUK,1,57.0,53.0,64.0,68.0,0.82,97.85769786,University of Tennessee Medical Center at Knoxville,1
-195,TNVU,1,315.0,264.0,323.0,390.0,1.57,95.32212544,Vanderbilt University Medical Center,1
-196,TXAS,1,95.0,106.0,82.0,65.0,0.46,94.72904783,Baylor Scott and White All Saints Medical Center-Fort Worth,1
-197,TXBC,1,181.0,154.0,200.0,180.0,1.61,97.11568031,"University Hospital, University of Texas Health Science Center",1
-198,TXCF,1,16.0,10.0,8.0,6.0,0.95,,Cook Children's Medical Center,0
-199,TXCM,1,20.0,9.0,11.0,21.0,0.5,,Children's Medical Center of Dallas,0
-200,TXCT,0,,,,,,,Seton Medical Center Austin,0
-201,TXDC,1,5.0,8.0,6.0,9.0,1.35,100.0,Driscoll Children's Hospital,0
-202,TXDL,1,,2.0,0.0,0.0,,,Dell Children's Medical Center,0
-203,TXDM,1,48.0,37.0,23.0,40.0,0.19,94.56140351,North Austin Medical Center,1
-204,TXDR,1,42.0,49.0,34.0,34.0,1.26,94.48453608,Doctor's Hospital at Renaissance,1
-205,TXDS,1,,8.0,26.0,32.0,0.43,98.0,Dell Seton Medical Center at The University of Texas at Austin,0
-206,TXFW,1,24.0,25.0,43.0,56.0,0.57,93.02884615,Texas Health Harris Methodist Fort Worth Hospital,1
-207,TXHD,1,142.0,180.0,134.0,185.0,1.03,96.66290808,Medical City Dallas Hospital,0
-208,TXHH,1,46.0,84.0,132.0,29.0,0.5,96.89185214,"Memorial Hermann Hospital, University of Texas at Houston",1
-209,TXHI,1,106.0,108.0,111.0,123.0,0.53,95.51265551,CHI St. Luke's Health Baylor College of Medicine Medical Center,1
-210,TXHS,1,433.0,338.0,392.0,352.0,0.89,95.36192853,Methodist Specialty and Transplant Hospital,1
-211,TXJS,1,86.0,103.0,115.0,98.0,1.36,94.43581781,University of Texas Medical Branch at Galveston,0
-212,TXLP,1,45.0,51.0,63.0,56.0,1.04,92.19858156,Las Palmas Medical Center,0
-213,TXMC,1,120.0,149.0,118.0,166.0,1.38,92.83950617,Methodist Dallas Medical Center,0
-214,TXMH,1,241.0,244.0,252.0,286.0,0.55,95.96254433,Houston Methodist Hospital,1
-215,TXPL,1,106.0,124.0,115.0,117.0,0.92,97.5464409,Medical City Fort Worth,1
-216,TXPM,1,10.0,32.0,51.0,38.0,1.28,97.83972125,Parkland Health and Hospital System,0
-217,TXSP,1,210.0,181.0,238.0,205.0,2.26,96.75567268,UT Southwestern Medical Center/William P. Clements Jr. University Hospital,0
-218,TXSW,1,166.0,127.0,66.0,52.0,0.89,90.04714233,Scott and White Memorial Hospital,0
-219,TXTC,1,35.0,28.0,36.0,38.0,0.54,,Texas Children's Hospital,0
-220,TXTX,1,230.0,190.0,178.0,192.0,0.91,95.75895914,Baylor University Medical Center,0
-221,TXUC,1,15.0,18.0,18.0,24.0,2.34,,University Children's Health,0
-222,TXVA,1,20.0,23.0,40.0,32.0,0.45,96.05263158,Michael E. DeBakey VA Medical Center,1
-223,UTLD,1,164.0,159.0,198.0,267.0,2.71,97.38884968,Intermountain Medical Center ,1
-224,UTMC,1,202.0,153.0,157.0,159.0,0.85,96.13360894,University of Utah Medical Center,1
-225,UTPC,1,15.0,15.0,11.0,10.0,1.25,,Primary Children's Hospital,0
-226,VACH,1,4.0,4.0,6.0,8.0,1.37,100.0,Children's Hospital of the King's Daughters,0
-227,VAFH,1,130.0,115.0,155.0,192.0,1.2,94.34536755,Inova Fairfax Hospital,1
-228,VAHD,1,36.0,34.0,42.0,52.0,0.66,95.83333333,Henrico Doctors' Hospital,1
-229,VAMC,1,274.0,289.0,304.0,329.0,1.32,93.42043453,"VCU Health System Authority, VCUMCx",1
-230,VAMV,0,,,,,,,Hunter Holmes McGuire Veterans Administration Medical Center,1
-231,VANG,1,68.0,69.0,87.0,100.0,0.75,92.36833806,Sentara Norfolk General Hospital,1
-232,VAUV,1,148.0,184.0,195.0,240.0,1.93,93.19372424,University of Virginia Health Sciences Center,1
-233,VTMC,1,5.0,10.0,12.0,16.0,0.63,100.0,The University of Vermont Medical Center,0
-234,WACH,1,30.0,13.0,24.0,24.0,2.22,100.0,Seattle Children's Hospital,0
-235,WASH,1,41.0,48.0,35.0,59.0,0.53,96.86609687,Providence Sacred Heart Medical Center & Children's Hospital,0
-236,WASM,1,107.0,107.0,134.0,124.0,0.58,96.29185499,Swedish Medical Center,0
-237,WAUW,1,194.0,198.0,201.0,251.0,1.35,97.00923825,University of Washington Medical Center,0
-238,WAVM,1,104.0,80.0,82.0,71.0,0.74,94.72954688,Virginia Mason Medical Center,0
-239,WICH,1,13.0,6.0,6.0,9.0,0.83,,Children's Hospital of Wisconsin,0
-240,WISE,1,69.0,55.0,113.0,172.0,1.16,96.841874,Froedtert Memorial Lutheran Hospital,0
-241,WISL,1,43.0,45.0,48.0,60.0,0.69,100.0,Aurora St. Luke's Medical Center,0
-242,WIUW,1,232.0,263.0,287.0,284.0,1.35,94.99307342,University of Wisconsin Hospital and Clinics,0
-243,WVCA,1,91.0,64.0,128.0,89.0,1.94,87.59259259,Charleston Area Medical Center,1
-244,WVWU,1,19.0,26.0,8.0,6.0,0.08,90.71358749,West Virginia University Hospitals Inc.,0
+﻿Name,Center Code,IOTA,Exists 2025,2021-2022 - Transplants,2022-2023 - Transplants,2023-2024 - Transplants,2024-2025 - Transplants,2024-2025 - Organ Offer Acceptance Rate,2024-2025 - Graft Survival Rate,Pediatric Center
+00 - Not sure,,,,,,,,,,
+BSW Uterus,,,,,,,,,,
+University of Alabama Hospital,ALUA,1,1.0,314.0,282.0,254.0,243.0,0.8,94.0,
+Birmingham VA Medical Center,ALVA,0,1.0,8.0,3.0,6.0,2.0,0.2,100.0,
+Arkansas Children's Hospital,ARCH,0,1.0,9.0,5.0,4.0,8.0,0.7,,1.0
+UAMS Medical Center,ARUA,1,1.0,184.0,155.0,172.0,144.0,1.0,95.8,
+Phoenix Children's Hospital,AZCH,0,1.0,22.0,10.0,9.0,14.0,1.0,,1.0
+Banner-University Medical Center Phoenix,AZGS,0,1.0,66.0,90.0,115.0,91.0,1.2,97.7,
+Mayo Clinic Hospital Arizona,AZMC,0,1.0,454.0,470.0,502.0,501.0,2.0,94.2,
+St. Joseph's Hospital and Medical Center,AZSJ,0,1.0,57.0,68.0,53.0,60.0,0.9,96.8,
+Banner University Medical Center-Tucson,AZUA,0,1.0,86.0,94.0,97.0,64.0,1.2,96.3,
+Rady Children's Hospital and Health Center,CACH,0,1.0,9.0,11.0,9.0,12.0,0.6,100.0,1.0
+Childrens Hospital Los Angeles,CACL,0,1.0,22.0,22.0,17.0,19.0,0.8,,1.0
+Cedars-Sinai Medical Center,CACS,1,1.0,268.0,285.0,335.0,316.0,1.4,95.6,
+Scripps Green Hospital,CAGH,1,1.0,62.0,51.0,61.0,49.0,0.7,97.9,
+University of California Irvine Medical Center,CAIM,1,1.0,126.0,127.0,133.0,221.0,1.8,94.2,
+Harbor UCLA Medical Center,CALA,1,1.0,27.0,36.0,39.0,48.0,0.3,95.6,
+Loma Linda University Medical Center,CALL,1,1.0,203.0,257.0,264.0,221.0,0.9,93.5,
+UCSF Medical Center at Mission Bay,CAMB,0,1.0,12.0,15.0,16.0,20.0,2.2,100.0,1.0
+Lucile Salter Packard Children's Hospital at Stanford,CAPC,0,1.0,26.0,30.0,28.0,42.0,1.4,,1.0
+California Pacific Medical Center-Van Ness Campus,CAPM,0,1.0,208.0,214.0,195.0,190.0,2.2,95.2,
+Riverside Community Hospital,CARC,0,1.0,8.0,27.0,6.0,0.0,,83.3,
+University of California San Diego Medical Center,CASD,1,1.0,150.0,146.0,178.0,163.0,0.9,96.8,
+University of California San Francisco Medical Center,CASF,0,1.0,386.0,388.0,430.0,361.0,1.5,95.4,
+Sutter Medical Center Sacramento,CASG,0,0.0,,,,,,,
+Sharp Memorial Hospital,CASH,1,1.0,84.0,105.0,83.0,101.0,0.7,94.1,
+Saint Joseph Hospital,CASJ,1,1.0,41.0,61.0,95.0,108.0,1.1,97.9,
+University of California Davis Medical Center,CASM,0,1.0,282.0,245.0,310.0,310.0,1.4,96.6,
+Stanford Health Care,CASU,0,1.0,154.0,164.0,189.0,166.0,1.4,98.3,
+University of California at Los Angeles Medical Center,CAUC,1,1.0,418.0,385.0,355.0,383.0,1.2,95.4,
+Keck Hospital of USC,CAUH,1,1.0,206.0,210.0,211.0,176.0,0.8,94.6,
+Children's Hospital Colorado,COCH,0,1.0,21.0,15.0,21.0,19.0,1.3,,1.0
+Centura Transplant / AdventHealth Porter,COPM,0,1.0,43.0,91.0,90.0,114.0,0.5,96.0,
+Presbyterian/St Luke's Medical Center,COSL,1,1.0,55.0,62.0,54.0,64.0,0.6,96.4,
+University of Colorado Hospital/Health Science Center,COUC,1,1.0,244.0,301.0,289.0,253.0,1.4,95.2,
+Hartford Hospital,CTHH,0,1.0,116.0,128.0,143.0,115.0,2.1,93.5,
+Yale New Haven Hospital,CTYN,0,1.0,121.0,131.0,126.0,106.0,1.0,96.5,
+Children's National Medical Center,DCCH,0,1.0,13.0,20.0,14.0,13.0,0.8,,1.0
+Medstar Georgetown Transplant Institute,DCGU,1,1.0,242.0,220.0,260.0,354.0,1.2,94.8,
+George Washington University Hospital,DCGW,1,1.0,65.0,45.0,60.0,52.0,0.5,95.9,
+Walter Reed National Military Medical Center at Bethesda,DCWR,1,1.0,45.0,53.0,41.0,36.0,0.8,97.3,
+Nemours Children's Hospital Delaware,DEAI,0,1.0,9.0,3.0,8.0,8.0,1.1,,1.0
+Christiana Care Health Services,DECC,1,1.0,23.0,29.0,42.0,45.0,0.6,95.2,
+Johns Hopkins All Children's Hospital,FLAC,0,0.0,,,,,,,1.0
+Broward Health Medical Center (FLBC),FLBC,0,1.0,19.0,12.0,0.0,0.0,,83.3,
+Cleveland Clinic Florida Weston,FLCC,0,1.0,156.0,142.0,151.0,132.0,0.8,95.9,
+AdventHealth Orlando,FLFH,1,1.0,117.0,107.0,126.0,105.0,0.7,96.4,
+Halifax Health,FLHM,1,1.0,20.0,13.0,12.0,3.0,0.2,88.9,
+Memorial Regional Hospital/Joe DiMaggio Children's Hospital,FLJD,0,0.0,,,,,,,1.0
+Jackson Memorial Hospital University of Miami School of Medicine,FLJM,0,1.0,367.0,429.0,337.0,276.0,1.8,92.8,
+Largo Medical Center,FLLM,0,1.0,45.0,77.0,74.0,88.0,0.8,93.6,
+Memorial Regional Hospital,FLMR,0,1.0,37.0,124.0,146.0,202.0,2.6,95.9,
+Ascension Sacred Heart Pensacola,FLSH,0,1.0,13.0,39.0,25.0,16.0,0.3,95.8,
+Mayo Clinic Hospital Florida,FLSL,0,1.0,226.0,224.0,206.0,219.0,0.8,93.4,
+Tampa General Hospital,FLTG,0,1.0,328.0,404.0,459.0,500.0,2.1,94.3,
+UF Health Shands Hospital,FLUF,0,1.0,184.0,221.0,230.0,138.0,1.2,97.4,
+Children's Healthcare of Atlanta at Egleston,GAEH,0,1.0,24.0,15.0,24.0,21.0,1.0,100.0,1.0
+Emory University Hospital,GAEM,1,1.0,370.0,370.0,353.0,410.0,1.0,94.8,
+"AU Medical Center, Inc.",GAMC,1,1.0,59.0,88.0,90.0,100.0,1.1,91.0,
+Piedmont Hospital,GAPH,1,1.0,379.0,332.0,341.0,361.0,1.1,96.7,
+The Queen's Medical Center,HIQM,0,1.0,46.0,63.0,43.0,70.0,1.6,100.0,
+Iowa Methodist Medical Center,IAIM,1,1.0,86.0,78.0,71.0,90.0,1.3,92.4,
+University of Iowa Hospitals and Clinics Transplant Programs,IAIV,1,1.0,111.0,95.0,111.0,78.0,0.5,94.3,
+The Iowa City VA Health Care System,IAVA,0,1.0,17.0,7.0,9.0,11.0,0.2,93.8,
+Advocate Christ Medical Center,ILCH,0,1.0,35.0,28.0,17.0,44.0,0.3,95.7,
+Ann & Robert H. Lurie Children's Hospital of Chicago,ILCM,0,1.0,33.0,26.0,26.0,44.0,1.5,100.0,1.0
+Loyola University Medical Center,ILLU,0,1.0,198.0,209.0,247.0,263.0,1.2,96.4,
+Springfield Memorial Hospital,ILMM,0,1.0,24.0,26.0,32.0,25.0,0.7,98.3,
+Northwestern Memorial Hospital,ILNM,0,1.0,277.0,308.0,341.0,338.0,1.5,96.9,
+Rush University Medical Center,ILPL,0,1.0,101.0,134.0,147.0,130.0,0.8,97.4,
+OSF Saint Francis Medical Center,ILSF,0,1.0,54.0,59.0,48.0,44.0,0.4,96.5,
+University of Chicago Medical Center,ILUC,0,1.0,164.0,140.0,166.0,225.0,1.0,95.4,
+University of Illinois Medical Center,ILUI,0,1.0,274.0,264.0,264.0,266.0,1.2,94.2,
+Edward Hines Jr. Veterans Administration Medical Center,ILVA,0,1.0,36.0,64.0,110.0,68.0,0.6,94.4,
+Indiana University Health,INIM,1,1.0,279.0,223.0,205.0,240.0,0.7,92.6,
+Lutheran Hospital of Fort Wayne,INLH,0,0.0,0.0,0.0,,,,,
+Ascension St. Vincent Hospital,INSV,1,1.0,72.0,80.0,75.0,87.0,0.4,98.4,
+University of Kansas Hospital,KSUK,0,1.0,185.0,177.0,153.0,206.0,2.0,93.2,
+Jewish Hospital (UofL - Trager Transplant),KYJH,0,1.0,62.0,62.0,76.0,77.0,0.7,98.5,
+Norton Children's Hospital,KYKC,0,1.0,4.0,1.0,2.0,3.0,0.3,,1.0
+University of Kentucky Medical Center,KYUK,0,1.0,97.0,114.0,127.0,116.0,0.5,98.0,
+Children's Hospital,LACH,0,1.0,17.0,13.0,15.0,11.0,0.7,,1.0
+Ochsner Foundation Hospital,LAOF,1,1.0,184.0,204.0,185.0,195.0,0.9,96.4,
+Tulane Medical Center,LATU,1,1.0,121.0,123.0,135.0,121.0,0.8,94.2,
+Willis-Knighton Medical Center,LAWK,0,1.0,48.0,43.0,54.0,73.0,0.3,94.5,
+Beth Israel Deaconess Medical Center,MABI,0,1.0,50.0,96.0,80.0,71.0,1.0,93.6,
+Baystate Medical Center,MABS,0,1.0,51.0,49.0,72.0,80.0,3.1,85.8,
+Boston Medical Center,MABU,0,1.0,35.0,23.0,19.0,66.0,0.9,91.1,
+Boston Children's Hospital,MACH,0,1.0,27.0,14.0,27.0,26.0,1.3,,1.0
+Lahey Clinic Medical Center,MALC,0,1.0,40.0,66.0,57.0,66.0,0.9,95.7,
+Massachusetts General Hospital,MAMG,0,1.0,162.0,145.0,176.0,223.0,0.8,95.3,
+Tufts Medical Center,MANM,0,1.0,37.0,69.0,52.0,51.0,0.7,94.9,
+Brigham and Women's Hospital,MAPB,0,1.0,63.0,76.0,61.0,51.0,0.5,93.6,
+UMass Memorial Medical Center,MAUM,0,1.0,57.0,67.0,59.0,72.0,1.0,94.5,
+Johns Hopkins Hospital,MDJH,1,1.0,249.0,242.0,239.0,201.0,0.7,95.7,
+University of Maryland Medical System,MDUM,1,1.0,168.0,162.0,145.0,152.0,0.5,93.4,
+Maine Medical Center,MEMC,0,1.0,51.0,45.0,41.0,31.0,0.9,93.6,
+Corewell Health William Beaumont Hospital,MIBH,1,1.0,75.0,81.0,91.0,80.0,0.5,96.3,
+Children's Hospital of Michigan,MICH,0,1.0,4.0,8.0,8.0,8.0,0.4,,1.0
+Helen DeVos Children's Hospital,MIDV,0,1.0,6.0,6.0,9.0,3.0,1.9,,1.0
+Henry Ford Hospital,MIHF,1,1.0,79.0,111.0,130.0,136.0,1.3,94.7,
+Henry Ford St. John Hospital,MISJ,1,1.0,26.0,35.0,28.0,30.0,0.6,94.1,
+Mercy Health Saint Mary's,MISM,1,1.0,90.0,102.0,96.0,109.0,0.9,94.7,
+University of Michigan Medical Center,MIUM,1,1.0,220.0,233.0,317.0,262.0,1.1,91.0,
+Abbott Northwestern Hospital,MNAN,1,1.0,19.0,37.0,40.0,32.0,0.8,95.0,
+Children's Minnesota,MNCM,0,0.0,,,,,,,1.0
+Hennepin County Medical Center,MNHC,1,1.0,52.0,58.0,61.0,49.0,0.7,97.2,
+Mayo Clinic Hospital Minnesota,MNMC,1,1.0,267.0,300.0,287.0,270.0,0.8,97.3,
+"University of Minnesota Medical Center, Fairview",MNUM,1,1.0,193.0,199.0,212.0,206.0,1.2,94.7,
+Barnes-Jewish Hospital,MOBH,1,1.0,274.0,315.0,322.0,334.0,1.1,95.3,
+Cardinal Glennon Children's Hospital,MOCG,0,1.0,10.0,3.0,8.0,5.0,0.7,,1.0
+St. Louis Children's Hospital at Washington University Medical Center,MOCH,0,1.0,12.0,9.0,11.0,11.0,0.7,,1.0
+Children's Mercy Hospital,MOCM,0,1.0,12.0,14.0,16.0,14.0,1.2,100.0,1.0
+St Luke's Hospital of Kansas City,MOLH,0,1.0,125.0,107.0,74.0,77.0,0.8,94.6,
+Research Medical Center,MORH,0,1.0,55.0,58.0,66.0,96.0,0.9,95.0,
+SSM Health Saint Louis University Hospital,MOSL,1,1.0,49.0,49.0,50.0,67.0,0.3,97.6,
+University of Missouri Hospital and Clinics,MOUM,0,1.0,8.0,15.0,12.0,12.0,0.2,89.7,
+University of Mississippi Medical Center,MSUM,1,1.0,139.0,132.0,151.0,135.0,1.3,94.1,
+Wake Forest Baptist Medical Center,NCBG,0,1.0,203.0,245.0,219.0,166.0,1.0,94.5,
+Carolinas Medical Center,NCCM,0,1.0,83.0,97.0,172.0,142.0,0.5,93.5,
+Duke University Hospital,NCDU,0,1.0,233.0,189.0,204.0,210.0,1.1,95.8,
+Vidant Medical Center,NCEC,0,1.0,77.0,107.0,129.0,149.0,1.4,95.6,
+University of North Carolina Hospitals,NCMH,0,1.0,150.0,151.0,153.0,163.0,0.6,96.3,
+Sanford Bismarck Medical Center,NDMC,1,1.0,17.0,16.0,17.0,17.0,1.0,97.0,
+Sanford Medical Center Fargo,NDSL,1,1.0,28.0,31.0,45.0,39.0,1.5,95.5,
+The Nebraska Medical Center,NEUN,0,1.0,155.0,144.0,169.0,186.0,1.6,96.0,
+Dartmouth Hitchcock Medical Center,NHDH,0,1.0,25.0,23.0,27.0,19.0,0.9,100.0,
+Newark Beth Israel Medical Center,NJBI,0,1.0,0.0,1.0,1.0,0.0,,,
+Hackensack University Medical Center,NJHK,0,1.0,116.0,242.0,323.0,339.0,3.0,93.3,
+Virtua Our Lady of Lourdes Hospital,NJLL,0,1.0,46.0,60.0,75.0,95.0,1.4,92.8,
+Robert Wood Johnson University Hospital,NJRW,0,1.0,68.0,59.0,75.0,69.0,0.6,90.4,
+Saint Barnabas Medical Center,NJSB,0,1.0,344.0,345.0,390.0,379.0,2.4,93.8,
+"University Hospital, University of New Mexico Health Sciences Centera",NMAQ,0,1.0,54.0,51.0,56.0,49.0,1.0,95.2,
+Presbyterian Hospital,NMPH,0,1.0,41.0,40.0,52.0,36.0,0.8,94.6,
+"Renown Transplant Institute 
+ ",NV,0,0.0,,,,,,,
+University Medical Center of Southern Nevada,NVUM,1,1.0,138.0,141.0,172.0,182.0,1.2,95.3,
+Albany Medical Center Hospital,NYAM,0,1.0,29.0,35.0,34.0,34.0,0.4,98.8,
+Long Island Jewish Medical Center-Cohen Children's Medical Center,NYCC,0,1.0,8.0,7.0,7.0,10.0,2.0,,1.0
+NY Presbyterian Hospital/Columbia Univ. Medical Center,NYCP,1,1.0,204.0,188.0,227.0,219.0,1.7,94.5,
+"State University of New York, Downstate Medical Center",NYDS,1,1.0,43.0,61.0,60.0,44.0,1.7,89.0,
+Erie County Medical Center,NYEC,1,1.0,138.0,140.0,140.0,136.0,2.3,88.7,
+"Strong Memorial Hospital, University of Rochester Medical Center",NYFL,1,1.0,104.0,104.0,103.0,92.0,0.9,94.6,
+Montefiore Medical Center,NYMA,1,1.0,171.0,198.0,246.0,221.0,3.3,93.0,
+Mount Sinai Medical Center,NYMS,1,1.0,296.0,274.0,271.0,253.0,0.7,95.5,
+North Shore University Hospital/Northwell Health,NYNS,1,1.0,119.0,134.0,195.0,207.0,1.3,96.1,
+New York-Presbyterian Hospital/Weill Cornell Medical Center,NYNY,0,1.0,263.0,236.0,279.0,315.0,1.7,93.4,
+University Hospital of State University of New York at Stony Brook,NYSB,1,1.0,89.0,73.0,64.0,61.0,0.8,94.1,
+NYU Langone Health,NYUC,1,1.0,311.0,333.0,321.0,337.0,1.5,97.0,
+State University of New York Upstate Medical University,NYUM,1,1.0,82.0,91.0,93.0,77.0,0.9,94.6,
+James J. Peters VA Medical Center,NYVA,1,1.0,20.0,11.0,15.0,11.0,0.2,93.5,
+Westchester Medical Center,NYWC,1,1.0,69.0,86.0,66.0,93.0,0.7,95.0,
+The Cleveland Clinic Foundation,OHCC,1,1.0,298.0,318.0,326.0,354.0,1.3,96.1,
+Nationwide Children's Hospital,OHCH,0,1.0,4.0,12.0,11.0,15.0,0.4,100.0,1.0
+Children's Hospital Medical Center,OHCM,0,1.0,34.0,24.0,23.0,29.0,1.3,100.0,1.0
+University of Toledo Medical Center,OHCO,0,1.0,174.0,200.0,203.0,191.0,4.1,94.1,
+Ohio State University Medical Center,OHOU,1,1.0,328.0,262.0,292.0,296.0,1.1,94.9,
+The Christ Hospital,OHTC,0,1.0,60.0,63.0,73.0,62.0,0.6,96.5,
+University of Cincinnati Medical Center,OHUC,0,1.0,175.0,230.0,209.0,198.0,1.3,96.6,
+University Hospitals of Cleveland,OHUH,1,1.0,134.0,94.0,191.0,147.0,2.0,93.4,
+Integris Baptist Medical Center,OKBC,0,1.0,78.0,86.0,104.0,114.0,0.9,96.0,
+OU Medical Center,OKMD,0,1.0,36.0,42.0,43.0,42.0,0.7,93.1,
+Ascension St John Medical Center,OKSJ,0,1.0,52.0,55.0,50.0,44.0,0.4,93.2,
+Legacy Good Samaritan Hospital and Medical Center,ORGS,1,1.0,89.0,93.0,116.0,77.0,1.2,96.6,
+"Providence St. Vincent Medical Center (No Living Donation)
+",ORSV,0,0.0,,,,,,,
+Oregon Health and Science University,ORUO,1,1.0,152.0,138.0,178.0,129.0,1.2,96.7,
+VA Portland Health Care System,ORVA,1,1.0,38.0,57.0,80.0,54.0,0.7,95.3,
+Albert Einstein Medical Center,PAAE,1,1.0,45.0,90.0,75.0,75.0,0.9,97.2,
+Allegheny General Hospital,PAAG,1,1.0,101.0,98.0,88.0,105.0,1.1,92.4,
+Crozer-Chester Medical Center (PACC),PACC,0,1.0,12.0,12.0,1.0,0.0,,76.9,
+UPMC Children's Hospital of Pittsburgh,PACH,0,1.0,19.0,21.0,14.0,16.0,0.9,100.0,1.0
+Children's Hospital of Philadelphia,PACP,0,1.0,18.0,15.0,24.0,24.0,0.6,,1.0
+Geisinger Medical Center,PAGM,1,1.0,42.0,66.0,53.0,61.0,0.3,95.0,
+Penn State Milton S Hershey Medical Center,PAHE,0,1.0,25.0,24.0,1.0,5.0,0.6,95.2,
+Pinnacle Health System at Harrisburg Hospital,PAHH,1,1.0,41.0,66.0,61.0,83.0,0.4,96.5,
+The Lankenau Hospital,PALH,0,1.0,13.0,8.0,6.0,0.0,,92.9,
+Lehigh Valley Hospital,PALV,1,1.0,92.0,78.0,113.0,150.0,1.2,92.9,
+UPMC Hamot,PAPH,0,1.0,18.0,8.0,16.0,13.0,0.2,96.8,
+University of Pittsburgh Medical Center,PAPT,1,1.0,183.0,198.0,190.0,162.0,0.8,93.1,
+St. Christopher's Hospital for Children,PASC,0,1.0,6.0,5.0,1.0,0.0,0.4,,1.0
+Thomas Jefferson University Hospital,PATJ,1,1.0,94.0,93.0,92.0,107.0,0.4,96.3,
+Temple University Hospital,PATU,1,1.0,40.0,43.0,66.0,75.0,0.2,93.1,
+Hospital of the University of Pennsylvania,PAUP,1,1.0,207.0,224.0,241.0,273.0,0.7,96.0,
+VA Pittsburgh Healthcare System,PAVA,1,1.0,27.0,29.0,45.0,43.0,0.2,97.7,
+Auxilio Mutuo Hospital,PRSJ,0,1.0,66.0,53.0,70.0,92.0,1.9,97.5,
+Rhode Island Hospital,RIRH,0,1.0,51.0,57.0,56.0,47.0,1.6,96.1,
+MUSC Lancaster,SCLA,0,1.0,,24.0,90.0,104.0,2.3,96.7,
+Medical University of South Carolina,SCMU,1,1.0,407.0,387.0,297.0,338.0,1.3,94.9,
+Prisma Health Greenville Memorial Hospital,SCPG,0,1.0,,28.0,111.0,133.0,0.9,97.6,
+Avera McKennan Hospital,SDMK,1,1.0,35.0,34.0,32.0,42.0,0.4,96.4,
+Sanford Health/USD Medical Center,SDSV,1,1.0,22.0,21.0,17.0,27.0,0.7,96.2,
+Erlanger Medical Center,TNEM,1,1.0,33.0,41.0,44.0,33.0,0.4,92.0,
+Le Bonheur Children's Medical Center,TNLB,0,1.0,3.0,7.0,8.0,7.0,0.8,,1.0
+Methodist University Hospital,TNMH,0,1.0,196.0,212.0,241.0,262.0,1.3,94.8,
+Saint Thomas Hospital,TNST,1,1.0,93.0,100.0,162.0,192.0,2.2,90.0,
+University of Tennessee Medical Center at Knoxville,TNUK,1,1.0,57.0,53.0,64.0,68.0,0.8,97.9,
+Vanderbilt University Medical Center,TNVU,1,1.0,315.0,264.0,323.0,390.0,1.6,95.3,
+Baylor Scott and White All Saints Medical Center-Fort Worth,TXAS,1,1.0,95.0,106.0,82.0,65.0,0.5,94.7,
+"University Hospital, University of Texas Health Science Center",TXBC,1,1.0,181.0,154.0,200.0,180.0,1.6,97.1,
+Cook Children's Medical Center,TXCF,0,1.0,16.0,10.0,8.0,6.0,1.0,,1.0
+Children's Medical Center of Dallas,TXCM,0,1.0,20.0,9.0,11.0,21.0,0.5,,1.0
+Seton Medical Center Austin,TXCT,0,0.0,,,,,,,
+Driscoll Children's Hospital,TXDC,0,1.0,5.0,8.0,6.0,9.0,1.4,100.0,1.0
+Dell Children's Medical Center,TXDL,0,1.0,,2.0,0.0,0.0,,,1.0
+North Austin Medical Center,TXDM,1,1.0,48.0,37.0,23.0,40.0,0.2,94.6,
+Doctor's Hospital at Renaissance,TXDR,1,1.0,42.0,49.0,34.0,34.0,1.3,94.5,
+Dell Seton Medical Center at The University of Texas at Austin,TXDS,0,1.0,,8.0,26.0,32.0,0.4,98.0,
+Texas Health Harris Methodist Fort Worth Hospital,TXFW,1,1.0,24.0,25.0,43.0,56.0,0.6,93.0,
+Medical City Dallas Hospital,TXHD,0,1.0,142.0,180.0,134.0,185.0,1.0,96.7,
+"Memorial Hermann Hospital, University of Texas at Houston",TXHH,1,1.0,46.0,84.0,132.0,29.0,0.5,96.9,
+CHI St. Luke's Health Baylor College of Medicine Medical Center,TXHI,1,1.0,106.0,108.0,111.0,123.0,0.5,95.5,
+Methodist Specialty and Transplant Hospital,TXHS,1,1.0,433.0,338.0,392.0,352.0,0.9,95.4,
+University of Texas Medical Branch at Galveston,TXJS,0,1.0,86.0,103.0,115.0,98.0,1.4,94.4,
+Las Palmas Medical Center,TXLP,0,1.0,45.0,51.0,63.0,56.0,1.0,92.2,
+Methodist Dallas Medical Center,TXMC,0,1.0,120.0,149.0,118.0,166.0,1.4,92.8,
+Houston Methodist Hospital,TXMH,1,1.0,241.0,244.0,252.0,286.0,0.6,96.0,
+Medical City Fort Worth,TXPL,1,1.0,106.0,124.0,115.0,117.0,0.9,97.5,
+Parkland Health and Hospital System,TXPM,0,1.0,10.0,32.0,51.0,38.0,1.3,97.8,
+UT Southwestern Medical Center/William P. Clements Jr. University Hospital,TXSP,0,1.0,210.0,181.0,238.0,205.0,2.3,96.8,
+Scott and White Memorial Hospital,TXSW,0,1.0,166.0,127.0,66.0,52.0,0.9,90.0,
+Texas Children's Hospital,TXTC,0,1.0,35.0,28.0,36.0,38.0,0.5,,1.0
+Baylor University Medical Center,TXTX,0,1.0,230.0,190.0,178.0,192.0,0.9,95.8,
+University Children's Health,TXUC,0,1.0,15.0,18.0,18.0,24.0,2.3,,1.0
+Michael E. DeBakey VA Medical Center,TXVA,1,1.0,20.0,23.0,40.0,32.0,0.5,96.1,
+Intermountain Medical Center ,UTLD,1,1.0,164.0,159.0,198.0,267.0,2.7,97.4,
+University of Utah Medical Center,UTMC,1,1.0,202.0,153.0,157.0,159.0,0.9,96.1,
+Primary Children's Hospital,UTPC,0,1.0,15.0,15.0,11.0,10.0,1.3,,1.0
+Children's Hospital of the King's Daughters,VACH,0,1.0,4.0,4.0,6.0,8.0,1.4,100.0,1.0
+Inova Fairfax Hospital,VAFH,1,1.0,130.0,115.0,155.0,192.0,1.2,94.3,
+Henrico Doctors' Hospital,VAHD,1,1.0,36.0,34.0,42.0,52.0,0.7,95.8,
+"VCU Health System Authority, VCUMCx",VAMC,1,1.0,274.0,289.0,304.0,329.0,1.3,93.4,
+Hunter Holmes McGuire Veterans Administration Medical Center,VAMV,1,0.0,,,,,,,
+Sentara Norfolk General Hospital,VANG,1,1.0,68.0,69.0,87.0,100.0,0.8,92.4,
+University of Virginia Health Sciences Center,VAUV,1,1.0,148.0,184.0,195.0,240.0,1.9,93.2,
+The University of Vermont Medical Center,VTMC,0,1.0,5.0,10.0,12.0,16.0,0.6,100.0,
+Seattle Children's Hospital,WACH,0,1.0,30.0,13.0,24.0,24.0,2.2,100.0,1.0
+Providence Sacred Heart Medical Center & Children's Hospital,WASH,0,1.0,41.0,48.0,35.0,59.0,0.5,96.9,1.0
+Swedish Medical Center,WASM,0,1.0,107.0,107.0,134.0,124.0,0.6,96.3,
+University of Washington Medical Center,WAUW,0,1.0,194.0,198.0,201.0,251.0,1.4,97.0,
+Virginia Mason Medical Center,WAVM,0,1.0,104.0,80.0,82.0,71.0,0.7,94.7,
+Children's Hospital of Wisconsin,WICH,0,1.0,13.0,6.0,6.0,9.0,0.8,,1.0
+Froedtert Memorial Lutheran Hospital,WISE,0,1.0,69.0,55.0,113.0,172.0,1.2,96.8,
+Aurora St. Luke's Medical Center,WISL,0,1.0,43.0,45.0,48.0,60.0,0.7,100.0,
+University of Wisconsin Hospital and Clinics,WIUW,0,1.0,232.0,263.0,287.0,284.0,1.4,95.0,
+Charleston Area Medical Center,WVCA,1,1.0,91.0,64.0,128.0,89.0,1.9,87.6,
+West Virginia University Hospitals Inc.,WVWU,0,1.0,19.0,26.0,8.0,6.0,0.1,90.7,

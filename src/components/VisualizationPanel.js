@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Chart, registerables } from 'chart.js';
 import annotationPlugin from 'chartjs-plugin-annotation';
 import { percent } from '../utils/formatters';
+import { PERFORMANCE_YEAR } from '../utils/newApi';
 
 Chart.register(...registerables, annotationPlugin);
 
@@ -38,8 +39,8 @@ function VisualizationPanel({ response, inputs }) {
             }
           },
           scales: {
-            x: { grid: { display: false }, ticks: { color: 'rgba(255,255,255,0.6)' } },
-            y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: 'rgba(255,255,255,0.6)' } }
+            x: { grid: { display: false }, ticks: { color: 'rgba(0,0,0,0.6)' } },
+            y: { grid: { color: 'rgba(0,0,0,0.08)' }, ticks: { color: 'rgba(0,0,0,0.6)' } }
           },
           responsive: true,
           maintainAspectRatio: false
@@ -71,8 +72,8 @@ function VisualizationPanel({ response, inputs }) {
             }
           },
           scales: {
-            x: { grid: { display: false }, ticks: { color: 'rgba(255,255,255,0.6)' } },
-            y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: 'rgba(255,255,255,0.6)' } }
+            x: { grid: { display: false }, ticks: { color: 'rgba(0,0,0,0.6)' } },
+            y: { grid: { color: 'rgba(0,0,0,0.08)' }, ticks: { color: 'rgba(0,0,0,0.6)' } }
           },
           responsive: true,
           maintainAspectRatio: false
@@ -88,7 +89,7 @@ function VisualizationPanel({ response, inputs }) {
           labels: [],
           datasets: [
             {
-              label: 'Monthly Transplants',
+              label: 'Actual Transplants',
               data: [],
               borderColor: '#2dd4bf',
               backgroundColor: 'rgba(45, 212, 191, 0.1)',
@@ -97,6 +98,19 @@ function VisualizationPanel({ response, inputs }) {
               tension: 0.3,
               pointRadius: 3,
               pointHoverRadius: 5
+            },
+            {
+              label: 'Projected Transplants',
+              data: [],
+              borderColor: '#a78bfa',
+              backgroundColor: 'rgba(167, 139, 250, 0.1)',
+              borderWidth: 2,
+              borderDash: [5, 5],
+              fill: true,
+              tension: 0.3,
+              pointRadius: 4,
+              pointHoverRadius: 6,
+              pointStyle: 'rectRot'
             },
             {
               label: 'Target',
@@ -115,7 +129,7 @@ function VisualizationPanel({ response, inputs }) {
             legend: {
               display: true,
               position: 'top',
-              labels: { color: 'rgba(255,255,255,0.8)', boxWidth: 30, padding: 12 }
+              labels: { color: 'rgba(0,0,0,0.7)', boxWidth: 30, padding: 12 }
             },
             tooltip: {
               callbacks: {
@@ -127,14 +141,14 @@ function VisualizationPanel({ response, inputs }) {
             x: {
               grid: { display: false },
               ticks: {
-                color: 'rgba(255,255,255,0.6)',
+                color: 'rgba(0,0,0,0.6)',
                 maxRotation: 45,
                 minRotation: 45
               }
             },
             y: {
-              grid: { color: 'rgba(255,255,255,0.03)' },
-              ticks: { color: 'rgba(255,255,255,0.6)' }
+              grid: { color: 'rgba(0,0,0,0.08)' },
+              ticks: { color: 'rgba(0,0,0,0.6)' }
             }
           },
           responsive: true,
@@ -169,7 +183,13 @@ function VisualizationPanel({ response, inputs }) {
       }
 
       if (volumeData && volumeData.monthLabels && volumeData.volumes) {
-        updateVolumeChart(volumeChartInstance.current, volumeData.monthLabels, volumeData.volumes, volumeData.target);
+        updateVolumeChart(
+          volumeChartInstance.current, 
+          volumeData.monthLabels, 
+          volumeData.volumes, 
+          volumeData.projected || [],
+          volumeData.target
+        );
       }
     }
   }, [response, inputs]);
@@ -229,11 +249,25 @@ function VisualizationPanel({ response, inputs }) {
     return closestIndex;
   };
 
-  const updateVolumeChart = (chart, labels, volumes, target) => {
+  const updateVolumeChart = (chart, labels, volumes, projected, target) => {
     chart.data.labels = labels;
-    chart.data.datasets[0].data = volumes;
-    // Create horizontal line for target
-    chart.data.datasets[1].data = new Array(labels.length).fill(target);
+    
+    // Dataset 0: Actual transplants (all but last point)
+    const actualData = [...volumes, null]; // Add null for the projected year
+    chart.data.datasets[0].data = actualData;
+    
+    // Dataset 1: Projected transplants (only last point, with connection from previous)
+    const projectedData = new Array(labels.length).fill(null);
+    if (volumes.length > 0 && projected && projected.length > 0) {
+      // Connect from last actual value to projected value
+      projectedData[volumes.length - 1] = volumes[volumes.length - 1]; // Connection point
+      projectedData[volumes.length] = projected[0]; // Projected value
+    }
+    chart.data.datasets[1].data = projectedData;
+    
+    // Dataset 2: Create horizontal line for target
+    chart.data.datasets[2].data = new Array(labels.length).fill(target);
+    
     chart.update();
   };
 
@@ -242,18 +276,20 @@ function VisualizationPanel({ response, inputs }) {
       <div className="card hero" style={{alignItems: 'center', padding: '12px 14px'}}>
         <div>
           <strong>Transplant Volume Trend</strong>
-          <div className="small-muted">Baseline Year 1 through Performance Year 1</div>
+          <div className="small-muted">Performance Year ({PERFORMANCE_YEAR})</div>
         </div>
         <div style={{marginLeft: 'auto', width: '220px', textAlign: 'right'}}>
-          <div className="small-muted">Center (input)</div>
-          <div style={{fontWeight: '700', fontSize: '18px'}}>{inputs.numTransplants || 0}</div>
+          <div className="small-muted">Last SRTR Reported Value</div>
+          <div style={{fontWeight: '700', fontSize: '18px'}}>
+            {response?.scores?.centerTransplants ? Math.round(response.scores.centerTransplants) : '--'}
+          </div>
         </div>
       </div>
 
       <div className="chart-card card">
         <canvas ref={volumeChartRef}></canvas>
         <div style={{display: 'flex', justifyContent: 'space-between', marginTop: '8px'}}>
-          <div className="small-muted">Transplant Volume from 2022 - 2025 SRTR Data</div>
+          <div className="small-muted">Transplant Volume from 2022 - 2025 SRTR Data + 2026 Projection</div>
         </div>
       </div>
 
@@ -262,8 +298,12 @@ function VisualizationPanel({ response, inputs }) {
           <strong>Offer Acceptance Rate Ratio</strong>
         </div>
         <div style={{marginLeft: 'auto', width: '220px', textAlign: 'right'}}>
-          <div className="small-muted">Center (input)</div>
-          <div style={{fontWeight: '700', fontSize: '18px'}}>{inputs.offerAcceptRate}</div>
+          <div className="small-muted">Last SRTR Reported Value</div>
+          <div style={{fontWeight: '700', fontSize: '18px'}}>
+            {response?.scores?.centerOfferAcceptRate !== null && response?.scores?.centerOfferAcceptRate !== undefined 
+              ? response.scores.centerOfferAcceptRate.toFixed(2) 
+              : '--'}
+          </div>
         </div>
       </div>
 
@@ -281,8 +321,12 @@ function VisualizationPanel({ response, inputs }) {
         </div>
 
         <div style={{marginLeft: 'auto', width: '220px', textAlign: 'right'}}>
-          <div className="small-muted">Center (input)</div>
-          <div style={{fontWeight: '700', fontSize: '18px'}}>{percent(inputs.graftSurvival)}</div>
+          <div className="small-muted">Last SRTR Reported Value</div>
+          <div style={{fontWeight: '700', fontSize: '18px'}}>
+            {response?.scores?.centerGraftSurvival !== null && response?.scores?.centerGraftSurvival !== undefined
+              ? percent(response.scores.centerGraftSurvival)
+              : '--'}
+          </div>
         </div>
       </div>
 

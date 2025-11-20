@@ -10,11 +10,11 @@ import { loadTransplantCenters, getCenterNameById, loadSummaryData, getSummaryDa
 function App() {
   const [inputs, setInputs] = useState({
     centerName: '',
-    centerId: 'CASF',
+    centerId: '',
     organType: 'Kidney',
-    numTransplants: 361,
-    offerAcceptRate: 1.53,
-    graftSurvival: 95.40,
+    numTransplants: 0,
+    offerAcceptRate: 0,
+    graftSurvival: 0,
     apiUrl: '',
     mode: 'mock'
   });
@@ -219,6 +219,7 @@ function App() {
           onCalculate={handleCalculate}
           onReset={handleReset}
           warningMessage={warningMessage}
+          response={response}
         />
         
         <ResultsPanel 

@@ -70,6 +70,20 @@ function ResultsPanel({ response, status, showDetails, onToggleDetails, onCopyJs
   const scores = calculateScores();
   const totalScore = response?.scores?.achievementScore + response?.scores?.qualityScore + response?.scores?.efficiencyScore;
 
+  // Check if inputs match center averages (Performance Y1)
+  const checkIfMaintainingMetrics = () => {
+    if (!response?.scores) return false;
+    
+    const numTransplantsMatch = inputs.numTransplants === response.scores.centerTransplants;
+    const acceptRateMatch = Math.abs(inputs.offerAcceptRate - response.scores.centerOfferAcceptRate) < 0.01;
+    const graftSurvivalMatch = Math.abs(inputs.graftSurvival - response.scores.centerGraftSurvival) < 0.1;
+    
+    return numTransplantsMatch && acceptRateMatch && graftSurvivalMatch;
+  };
+
+  const isMaintainingMetrics = checkIfMaintainingMetrics();
+  const totalPayment = response?.totals ? ((response.totals.upside_total || 0) + (response.totals.downside_total || 0)) : 0;
+
   return (
     <>
       <div className="results" style={{marginTop: '18px'}}>
@@ -135,20 +149,71 @@ function ResultsPanel({ response, status, showDetails, onToggleDetails, onCopyJs
           </div>
         </div>
 
-        <div className="stat" style={{gridColumn: '1/-1', background: 'linear-gradient(135deg, rgba(96,165,250,0.1), rgba(45,212,191,0.1))', borderRadius: '8px', padding: '16px'}}>
+        {/* Explanation Card */}
+        {response && (
+          <div className="stat" style={{gridColumn: '1/-1', background: 'rgba(59,130,246,0.08)', borderRadius: '8px', padding: '12px', border: '1px solid rgba(59,130,246,0.2)'}}>
+            <div className="label" style={{fontSize: '13px', marginBottom: '6px'}}>💡 What does this mean?</div>
+            <div style={{fontSize: '13px', lineHeight: '1.5', color: 'rgba(0,0,0,0.75)'}}>
+              {isMaintainingMetrics ? (
+                <>
+                  If you maintain your current year metrics into the next performance year, 
+                  {totalPayment >= 0 ? (
+                    <> your center will <strong style={{color: '#2dd4bf'}}>receive approximately {currency(totalPayment)}</strong> from CMS as part of the IOTA model.</>
+                  ) : (
+                    <> your center will <strong style={{color: '#ef4444'}}>owe approximately {currency(Math.abs(totalPayment))}</strong> to CMS as part of this mandatory payment model.</>
+                  )}
+                </>
+              ) : (
+                <>
+                  Based on your projected metrics, 
+                  {totalPayment >= 0 ? (
+                    <> your center would <strong style={{color: '#2dd4bf'}}>receive approximately {currency(totalPayment)}</strong> from CMS.</>
+                  ) : (
+                    <> your center would <strong style={{color: '#ef4444'}}>owe approximately {currency(Math.abs(totalPayment))}</strong> to CMS as part of this mandatory payment model.</>
+                  )}
+                </>
+              )}
+            </div>
+          </div>
+        )}
+
+        <div className="stat" style={{gridColumn: '1/-1', background: 'linear-gradient(135deg, rgba(96,165,250,0.15), rgba(45,212,191,0.12))', borderRadius: '8px', padding: '16px'}}>
           <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
             <div>
               <div className="label">Total IOTA Score</div>
-              <div style={{fontSize: '42px', fontWeight: '800', marginTop: '4px', color: '#60a5fa'}}>{totalScore}/100</div>
+              <div style={{fontSize: '42px', fontWeight: '800', marginTop: '4px', color: '#3b82f6'}}>{totalScore}/100</div>
             </div>
             <div style={{textAlign: 'right'}}>
-              <div className="label">Total Payment</div>
-              <div style={{fontSize: '32px', fontWeight: '700', marginTop: '4px', color: '#2dd4bf'}}>
+              <div className="label">Total Payment (from CMS)</div>
+              <div style={{fontSize: '32px', fontWeight: '700', marginTop: '4px', 
+                color: response?.totals && ((response.totals.upside_total || 0) + (response.totals.downside_total || 0)) < 0 ? '#ef4444' : '#2dd4bf'}}>
                 {response?.totals ? currency((response.totals.upside_total || 0) + (response.totals.downside_total || 0)) : '$0'}
               </div>
             </div>
           </div>
         </div>
+
+        {/* Pathway to Achieve Target - shown when projected transplants exceed last reported */}
+        {response?.scores && inputs.numTransplants > response.scores.centerTransplants && (
+          <div className="stat" style={{gridColumn: '1/-1', background: 'rgba(45,212,191,0.08)', borderRadius: '8px', padding: '16px', border: '1px solid rgba(45,212,191,0.2)'}}>
+            <div className="label" style={{fontSize: '14px', marginBottom: '10px', color: '#14b8a6'}}>📈 Pathway to Achieve Target</div>
+            <div style={{fontSize: '13px', lineHeight: '1.6', color: 'rgba(0,0,0,0.75)'}}>
+              To increase from <strong>{Math.round(response.scores.centerTransplants)}</strong> transplants (last reported) to your target of <strong>{inputs.numTransplants}</strong> transplants, 
+              your center would need to perform <strong style={{color: '#2dd4bf'}}>{inputs.numTransplants - Math.round(response.scores.centerTransplants)} additional transplants</strong> (
+              {Math.round(((inputs.numTransplants - response.scores.centerTransplants) / response.scores.centerTransplants) * 100)}% increase).
+              
+              <div style={{marginTop: '12px', paddingTop: '12px', borderTop: '1px solid rgba(45,212,191,0.2)'}}>
+                <strong style={{display: 'block', marginBottom: '6px'}}>Strategies to consider:</strong>
+                <ul style={{marginLeft: '20px', marginTop: '6px', marginBottom: 0}}>
+                  <li style={{marginBottom: '4px'}}>Increase your offer acceptance rate (currently {inputs.offerAcceptRate}%)</li>
+                  <li style={{marginBottom: '4px'}}>Expand donor acceptance criteria to include more marginal organs</li>
+                  <li style={{marginBottom: '4px'}}>Reduce average waitlist time through more efficient evaluation processes</li>
+                  <li style={{marginBottom: '4px'}}>Increase referrals and patient listing rates in your catchment area</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {showDetails && response?.payments && (
@@ -161,21 +226,21 @@ function ResultsPanel({ response, status, showDetails, onToggleDetails, onCopyJs
 
             <div style={{marginTop: '10px', overflow: 'auto', maxHeight: '260px', borderRadius: '8px'}}>
               <table style={{width: '100%', borderCollapse: 'collapse'}}>
-                <thead style={{position: 'sticky', top: 0, background: 'rgba(255,255,255,0.01)', backdropFilter: 'blur(2px)'}}>
+                <thead style={{position: 'sticky', top: 0, background: 'rgba(248,250,252,0.95)', backdropFilter: 'blur(2px)'}}>
                   <tr>
-                    <th style={{textAlign: 'left', padding: '8px', fontSize: '13px', borderBottom: '1px solid rgba(255,255,255,0.02)'}}>#</th>
-                    <th style={{textAlign: 'left', padding: '8px', fontSize: '13px', borderBottom: '1px solid rgba(255,255,255,0.02)'}}>Transplant ID</th>
-                    <th style={{textAlign: 'right', padding: '8px', fontSize: '13px', borderBottom: '1px solid rgba(255,255,255,0.02)'}}>Upside ($)</th>
-                    <th style={{textAlign: 'right', padding: '8px', fontSize: '13px', borderBottom: '1px solid rgba(255,255,255,0.02)'}}>Downside ($)</th>
+                    <th style={{textAlign: 'left', padding: '8px', fontSize: '13px', borderBottom: '1px solid rgba(0,0,0,0.1)'}}>#</th>
+                    <th style={{textAlign: 'left', padding: '8px', fontSize: '13px', borderBottom: '1px solid rgba(0,0,0,0.1)'}}>Transplant ID</th>
+                    <th style={{textAlign: 'right', padding: '8px', fontSize: '13px', borderBottom: '1px solid rgba(0,0,0,0.1)'}}>Upside ($)</th>
+                    <th style={{textAlign: 'right', padding: '8px', fontSize: '13px', borderBottom: '1px solid rgba(0,0,0,0.1)'}}>Downside ($)</th>
                   </tr>
                 </thead>
                 <tbody>
                   {response.payments.slice(0, 200).map((p, idx) => (
                     <tr key={idx}>
-                      <td style={{padding: '8px', borderBottom: '1px solid rgba(255,255,255,0.02)'}}>{idx + 1}</td>
-                      <td style={{padding: '8px', borderBottom: '1px solid rgba(255,255,255,0.02)'}}>{p.id || ''}</td>
-                      <td style={{padding: '8px', textAlign: 'right', borderBottom: '1px solid rgba(255,255,255,0.02)'}}>{currency(p.upside)}</td>
-                      <td style={{padding: '8px', textAlign: 'right', borderBottom: '1px solid rgba(255,255,255,0.02)'}}>{currency(p.downside)}</td>
+                      <td style={{padding: '8px', borderBottom: '1px solid rgba(0,0,0,0.05)'}}>{idx + 1}</td>
+                      <td style={{padding: '8px', borderBottom: '1px solid rgba(0,0,0,0.05)'}}>{p.id || ''}</td>
+                      <td style={{padding: '8px', textAlign: 'right', borderBottom: '1px solid rgba(0,0,0,0.05)'}}>{currency(p.upside)}</td>
+                      <td style={{padding: '8px', textAlign: 'right', borderBottom: '1px solid rgba(0,0,0,0.05)'}}>{currency(p.downside)}</td>
                     </tr>
                   ))}
                 </tbody>

@@ -1,6 +1,10 @@
 // newApi.js
 // Browser-safe API. NO fs, NO file loading. All data must be passed in via inputs.summary and inputs.graftData.
 
+// Global year constants
+export const BASELINE_YEARS = ['2022-2023', '2023-2024', '2024-2025'];
+export const PERFORMANCE_YEAR = '2024-2025';
+
 function asNum(v, fallback = NaN) {
   const x = Number(v);
   return Number.isFinite(x) ? x : fallback;
@@ -15,11 +19,7 @@ function percentileRank(arr = [], value) {
 }
 
 function meanBaselineForCenter(row) {
-  const keys = [
-    "Baseline Y1 - Transplants",
-    "Baseline Y2 - Transplants",
-    "Baseline Y3 - Transplants"
-  ];
+  const keys = BASELINE_YEARS.map(year => `${year} - Transplants`);
   const vals = keys.map(k => asNum(row[k], NaN)).filter(v => !Number.isNaN(v));
   if (!vals.length) return NaN;
   return vals.reduce((a,b)=>a+b,0) / vals.length;
@@ -30,15 +30,18 @@ function computeNationalGrowthRate(summary) {
 
   let baselineTotal = 0;
   let perfTotal = 0;
-  let count = 0;
 
   summary.forEach(r => {
+    // Exclude pediatric centers using the "Pediatric Center" column
+    const isPediatric = r['Pediatric Center'] === 1 || r['Pediatric Center'] === 1.0 || r['Pediatric Center'] === '1.0';
+    
+    if (isPediatric) return; // Skip pediatric centers
+    
     const avg = meanBaselineForCenter(r);
     if (!Number.isNaN(avg)) {
       baselineTotal += avg;
-      count++;
     }
-    const perf = asNum(r["Performance Y1 - Transplants"], NaN);
+    const perf = asNum(r[`${PERFORMANCE_YEAR} - Transplants`], NaN);
     if (Number.isFinite(perf)) perfTotal += perf;
   });
 
@@ -102,10 +105,18 @@ function calculateAchievement(n, target) {
 }
 
 function calculateEfficiency(summary, centerCode, proposedRate) {
-  const key = "Performance Y1 - Organ Offer Acceptance Rate";
-  const rates = summary.map(r => asNum(r[key], NaN)).filter(v => Number.isFinite(v));
+  const key = `${PERFORMANCE_YEAR} - Organ Offer Acceptance Rate`;
+  
+  // Only include rates from non-pediatric centers for percentile rank calculation
+  const rates = summary
+    .filter(r => {
+      const isPediatric = r['Pediatric Center'] === 1 || r['Pediatric Center'] === 1.0 || r['Pediatric Center'] === '1.0';
+      return !isPediatric;
+    })
+    .map(r => asNum(r[key], NaN))
+    .filter(v => Number.isFinite(v));
 
-  const centerRow = summary.find(r => String(r.CTR_CD).trim() === String(centerCode).trim());
+  const centerRow = summary.find(r => String(r['Center Code']).trim() === String(centerCode).trim());
   if (!centerRow) return 0;
 
   const centerRate = asNum(centerRow[key], NaN);
@@ -131,7 +142,7 @@ function calculateEfficiency(summary, centerCode, proposedRate) {
 }
 
 function calculateQuality(summary, graftSurvival) {
-  const key = "Performance Y1 - Graft Survival Rate";
+  const key = `${PERFORMANCE_YEAR} - Graft Survival Rate`;
   // Filter out non-finite values, zeros, and empty strings
   const vals = summary
     .map(r => asNum(r[key], NaN))
@@ -162,14 +173,74 @@ export function compileCenterResults(inputs = {}) {
     ? inputs.graftSurvival 
     : inputs.graftSurvival * 100;
 
+  // Check if center ID is valid (not empty and exactly 4 characters)
+  const isValidCenterCode = centerCode && 
+                           typeof centerCode === 'string' && 
+                           centerCode.trim().length === 4;
+
+  // Find the center row
+  const row = isValidCenterCode 
+    ? summary.find(r => String(r['Center Code']).trim() === String(centerCode).trim())
+    : null;
+
+  // Check if baseline data exists
+  const baselineAvg = row ? meanBaselineForCenter(row) : NaN;
+  const hasBaselineData = Number.isFinite(baselineAvg);
+
+  // If no valid center or no baseline data, return zeros for everything
+  if (!isValidCenterCode || !hasBaselineData) {
+    return {
+      meta: {
+        inputs,
+        timestamp: new Date().toISOString(),
+        model: "iota-v1-sim"
+      },
+      perTransplant: {
+        upside: 0,
+        downside: 0
+      },
+      totals: {
+        upside_total: 0,
+        downside_total: 0
+      },
+      distribution: {
+        acceptance: { bins: [], freqs: [], values: [], percentiles: { p10: null, p25: null, p50: null, p75: null, p90: null } },
+        graftSurvival: { bins: [], freqs: [], values: [], percentiles: { p10: null, p25: null, p50: null, p75: null, p90: null } }
+      },
+      transplantVolume: {
+        monthLabels: ['2022-2023', '2023-2024', '2024-2025', '2025-2026'],
+        volumes: [null, null, null],
+        projected: [0],
+        target: 0
+      },
+      scores: {
+        transplantTarget: 0,
+        currentTransplants: 0,
+        distanceFromTarget: 0,
+        acceptancePercentile: 0,
+        graftSurvivalPercentile: 0,
+        benchmarkAcceptanceRate: 0,
+        benchmarkGraftSurvival: 0,
+        centerOfferAcceptRate: 0,
+        centerGraftSurvival: 0,
+        centerTransplants: 0,
+        achievementScore: 0,
+        efficiencyScore: 0,
+        qualityScore: 0,
+        totalScore: 0
+      },
+      nRecords: 0
+    };
+  }
+
   // --------- REAL DISTRIBUTIONS ----------
   const acceptanceVals = summary
-    .map(r => asNum(r["Performance Y1 - Organ Offer Acceptance Rate"], NaN))
+    .map(r => asNum(r[`${PERFORMANCE_YEAR} - Organ Offer Acceptance Rate`], NaN))
     .filter(v => Number.isFinite(v));
 
   // Filter out non-finite values, zeros, and empty strings for graft survival
   const graftVals = graftData
-    .map(r => asNum(r["Performance Y1 - Graft Survival Rate"], NaN))
+    .map(r => asNum(r[`${PERFORMANCE_YEAR} - Graft Survival Rate`], NaN))
     .filter(v => Number.isFinite(v) && v > 0)
     .map(v => (v > 1 ? v : v * 100));
 
@@ -180,11 +251,7 @@ export function compileCenterResults(inputs = {}) {
   const ngr = computeNationalGrowthRate(summary);
   console.log(ngr)
 
-  const row = summary.find(r => String(r.CTR_CD).trim() === String(centerCode).trim());
-  const baselineAvg = row ? meanBaselineForCenter(row) : NaN;
-
-  const transplantTarget =
-    Number.isFinite(baselineAvg) ? baselineAvg * (1 + ngr) : n * 1.15;
+  const transplantTarget = baselineAvg * (1 + ngr);
 
   // --------- SCORES ----------
   const achievement = calculateAchievement(n, transplantTarget);
@@ -195,7 +262,7 @@ export function compileCenterResults(inputs = {}) {
 
   // --------- PAYMENTS ----------
   let perUpside = 15000 * (totalScore - 60) / 40;
-  let perDownside = 2000 * (40 - totalScore) / 40;
+  let perDownside = 2000 * (40 - totalScore) / 40 * (-1);
 
   if (41 <= totalScore && totalScore <= 59) {
     perUpside = 0;
@@ -203,30 +270,37 @@ export function compileCenterResults(inputs = {}) {
   }
 
   // Ensure upside is never negative
-  perUpside = Math.max(0, perUpside);
-  perDownside = Math.min(0, perDownside);
-
-  const payments = [];
-  for (let i = 0; i < Math.min(1000, n); i++) {
-    const u = perUpside * (0.85 + Math.random() * 0.3);
-    const d = perDownside * (0.75 + Math.random() * 0.4);
-    payments.push({
-      id: `TX-${i+1}`,
-      upside: Math.round(Math.max(0, u)),
-      downside: Math.round(Math.max(0, d))
-    });
+  //perUpside = Math.max(0, perUpside);
+  //perDownside = Math.min(0, perDownside);
+  if (totalScore < 60) {
+    perUpside = 0
+  }
+  
+  if (totalScore > 40) {
+    perDownside = 0
   }
 
   // --------- TRANSPLANT VOLUME DATA ----------
-  const baselineY1 = row ? asNum(row["Baseline Y1 - Transplants"], NaN) : NaN;
-  const baselineY2 = row ? asNum(row["Baseline Y2 - Transplants"], NaN) : NaN;
-  const baselineY3 = row ? asNum(row["Baseline Y3 - Transplants"], NaN) : NaN;
-  const performanceY1 = row ? asNum(row["Performance Y1 - Transplants"], NaN) : NaN;
+  const baselineY1 = row ? asNum(row[`${BASELINE_YEARS[0]} - Transplants`], NaN) : NaN;
+  const baselineY2 = row ? asNum(row[`${BASELINE_YEARS[1]} - Transplants`], NaN) : NaN;
+  const baselineY3 = row ? asNum(row[`${BASELINE_YEARS[2]} - Transplants`], NaN) : NaN;
+  // Note: BASELINE_YEARS[2] is 2024-2025, which is the same as PERFORMANCE_YEAR
+  const performanceY1 = baselineY3; // Same as baseline Y3 since both are 2024-2025
+  
+  // For 2025-2026 projection: use the numTransplants input as the projected value
+  const projectedY2 = n; // Use the input number of transplants as the projection
 
-  const volumeLabels = ['Baseline Y1', 'Baseline Y2', 'Baseline Y3', 'Performance Y1'];
-  const volumeData = [baselineY1, baselineY2, baselineY3, performanceY1].map(v => 
+  // Only show unique years: the three baseline years already include 2024-2025
+  const volumeLabels = [...BASELINE_YEARS, '2025-2026'];
+  const volumeData = [baselineY1, baselineY2, baselineY3].map(v => 
     Number.isFinite(v) ? v : null
   );
+  const projectedData = [projectedY2]; // Separate array for projected values
+
+  // Get center's actual Performance Y1 values
+  const centerOfferAcceptRate = row ? asNum(row[`${PERFORMANCE_YEAR} - Organ Offer Acceptance Rate`], NaN) : NaN;
+  const centerGraftSurvival = row ? asNum(row[`${PERFORMANCE_YEAR} - Graft Survival Rate`], NaN) : NaN;
+  const centerGraftSurvivalPct = centerGraftSurvival > 1 ? centerGraftSurvival : centerGraftSurvival * 100;
 
   return {
     meta: {
@@ -249,6 +323,7 @@ export function compileCenterResults(inputs = {}) {
     transplantVolume: {
       monthLabels: volumeLabels,
       volumes: volumeData,
+      projected: projectedData,
       target: transplantTarget
     },
     scores: {
@@ -258,11 +333,14 @@ export function compileCenterResults(inputs = {}) {
       acceptancePercentile: percentileRank(acceptanceVals, offerAcceptRate),
       graftSurvivalPercentile: percentileRank(graftVals, graftSurvival),
       benchmarkAcceptanceRate: acceptanceVals.reduce((a,b)=>a+b,0)/acceptanceVals.length || 52,
+      benchmarkGraftSurvival: graftVals.length ? graftVals.reduce((a,b)=>a+b,0)/graftVals.length : null,
+      centerOfferAcceptRate: Number.isFinite(centerOfferAcceptRate) ? centerOfferAcceptRate : null,
+      centerGraftSurvival: Number.isFinite(centerGraftSurvivalPct) ? centerGraftSurvivalPct : null,
+      centerTransplants: performanceY1,
       achievementScore: achievement,
       efficiencyScore: efficiency,
       qualityScore: quality,
       totalScore
-    },
-    nRecords: payments.length
+    }
   };
 }

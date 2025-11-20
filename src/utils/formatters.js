@@ -13,18 +13,18 @@ function parseCSV(text) {
   const lines = text.split('\n');
   if (!lines.length) return [];
   
-  const headers = lines[0].split(',').map(h => h.trim());
+  const headers = parseCSVLine(lines[0]).map(h => h.replace(/^"|"$/g, '').trim());
   const data = [];
   
   for (let i = 1; i < lines.length; i++) {
     const line = lines[i].trim();
     if (!line) continue;
     
-    const values = line.split(',');
+    const values = parseCSVLine(line);
     const row = {};
     
     headers.forEach((header, index) => {
-      let value = values[index]?.trim() || '';
+      let value = values[index]?.replace(/^"|"$/g, '').trim() || '';
       
       // Convert numeric strings to numbers
       if (value && !isNaN(value)) {
@@ -70,14 +70,14 @@ export async function loadTransplantCenters() {
   if (centersData) return centersData;
   
   try {
-    const response = await fetch('/transplant-centers.csv');
+    const response = await fetch('/merged_df_temp.csv');
     const text = await response.text();
     
     // Parse CSV
     const lines = text.split('\n');
-    const headers = parseCSVLine(lines[0]);
-    const nameIndex = headers.findIndex(h => h.trim() === 'Name');
-    const ctrCdIndex = headers.findIndex(h => h.trim() === 'CTR_CD');
+    const headers = parseCSVLine(lines[0]).map(h => h.replace(/^"|"$/g, '').trim());
+    const nameIndex = headers.findIndex(h => h === 'Name');
+    const ctrCdIndex = headers.findIndex(h => h === 'Center Code');
     
     centersData = {};
     
@@ -86,8 +86,8 @@ export async function loadTransplantCenters() {
       if (!line) continue;
       
       const values = parseCSVLine(line);
-      const ctrCd = values[ctrCdIndex]?.trim();
-      const name = values[nameIndex]?.trim();
+      const ctrCd = values[ctrCdIndex]?.replace(/^"|"$/g, '').trim();
+      const name = values[nameIndex]?.replace(/^"|"$/g, '').trim();
       
       if (ctrCd && name) {
         centersData[ctrCd.toUpperCase()] = name;
@@ -105,6 +105,25 @@ export async function loadTransplantCenters() {
 export function getCenterNameById(centerId) {
   if (!centersData || !centerId) return null;
   return centersData[centerId.toUpperCase()] || null;
+}
+
+export function getAllCenters() {
+  if (!centersData) return [];
+  
+  // Return array of objects with id and name
+  return Object.entries(centersData)
+    .map(([id, name]) => ({ id, name }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export function getCenterIdByName(centerName) {
+  if (!centersData || !centerName) return null;
+  
+  const entry = Object.entries(centersData).find(([id, name]) => 
+    name.toLowerCase() === centerName.toLowerCase()
+  );
+  
+  return entry ? entry[0] : null;
 }
 
 // Load and parse merged summary data
@@ -132,14 +151,16 @@ export function getCenterPerformanceY1(centerId) {
   if (!summaryData || !centerId) return null;
   
   const centerCode = centerId.toUpperCase();
-  const centerRow = summaryData.find(row => row.CTR_CD === centerCode);
+  const centerRow = summaryData.find(row => row['Center Code'] === centerCode);
   
   if (!centerRow) return null;
   
+  const PERFORMANCE_YEAR = '2024-2025';
+  
   return {
-    numTransplants: centerRow['Performance Y1 - Transplants'] || null,
-    offerAcceptRate: centerRow['Performance Y1 - Organ Offer Acceptance Rate'] || null,
-    graftSurvival: centerRow['Performance Y1 - Graft Survival Rate'] || null,
+    numTransplants: centerRow[`${PERFORMANCE_YEAR} - Transplants`] || null,
+    offerAcceptRate: centerRow[`${PERFORMANCE_YEAR} - Organ Offer Acceptance Rate`] || null,
+    graftSurvival: centerRow[`${PERFORMANCE_YEAR} - Graft Survival Rate`] || null,
     isIOTA: centerRow['IOTA'] === 1
   };
 }
@@ -148,7 +169,7 @@ export function isIOTACenter(centerId) {
   if (!summaryData || !centerId) return false;
   
   const centerCode = centerId.toUpperCase();
-  const centerRow = summaryData.find(row => row.CTR_CD === centerCode);
+  const centerRow = summaryData.find(row => row['Center Code'] === centerCode);
   
   return centerRow && centerRow['IOTA'] === 1;
 }
@@ -157,7 +178,7 @@ export function centerExists(centerId) {
   if (!summaryData || !centerId) return false;
   
   const centerCode = centerId.toUpperCase();
-  const centerRow = summaryData.find(row => row.CTR_CD === centerCode);
+  const centerRow = summaryData.find(row => row['Center Code'] === centerCode);
   
   return !!centerRow;
 }
